@@ -1,10 +1,12 @@
 ---
-title: Interhouse Sports
-emoji: 👀
-colorFrom: blue
-colorTo: blue
+title: interhouse-sports
+emoji: 🐳
+colorFrom: gray
+colorTo: purple
 sdk: static
 pinned: false
+tags:
+  - deepsite
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
