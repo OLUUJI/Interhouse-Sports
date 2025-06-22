@@ -77,9 +77,6 @@
                 <a href="#contact" class="hover:text-yellow-300 transition">Contact</a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnUnNlPp2FEu_L7_AXmgE30kbIib7miQxyAkcZ8MQhwMGTiw/viewform" target="_blank" class="hover:text-yellow-300 transition">Register</a>
             </div>
-            <button class="md:hidden focus:outline-none" id="menu-toggle">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
         </div>
         <!-- Mobile menu -->
         <div class="md:hidden hidden px-6 py-4 bg-[#7e0a6a]" id="mobile-menu">
@@ -117,7 +114,26 @@
                 </div>
             </div>
             
-            <div class="mt-16 animate-bounce">
+            <div id="countdown" class="mt-10 flex justify-center gap-4 text-center">
+                <div class="bg-white/20 backdrop-blur rounded-lg p-4 w-16">
+                    <div class="text-2xl font-bold" id="days">00</div>
+                    <div class="text-xs">Days</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-lg p-4 w-16">
+                    <div class="text-2xl font-bold" id="hours">00</div>
+                    <div class="text-xs">Hours</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-lg p-4 w-16">
+                    <div class="text-2xl font-bold" id="minutes">00</div>
+                    <div class="text-xs">Minutes</div>
+                </div>
+                <div class="bg-white/20 backdrop-blur rounded-lg p-4 w-16">
+                    <div class="text-2xl font-bold" id="seconds">00</div>
+                    <div class="text-xs">Seconds</div>
+                </div>
+            </div>
+
+            <div class="mt-8 animate-bounce">
                 <a href="#about" class="text-white text-4xl">
                     <i class="fas fa-chevron-down"></i>
                 </a>
@@ -231,5 +247,36 @@
         </div>
     </section>
 
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=oluuji/interhouse-sports" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+    <script>
+        // Set the date we're counting down to (August 16, 2025)
+        const countDownDate = new Date("August 16, 2025 09:00:00").getTime();
+
+        // Update the countdown every 1 second
+        const x = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the countdown date
+            const distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            // If the countdown is finished, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "The event has started!";
+            }
+        }, 1000);
+    </script>
+</body>
 </html>
