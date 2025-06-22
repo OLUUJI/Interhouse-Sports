@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winnipeg Interhouse Sports 2025</title>
-    <link rel="icon" type="image/png" href="https://huggingface.co/spaces/oluuji/interhouse-sports/resolve/main/small%20logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -237,14 +236,24 @@
         <div class="container mx-auto px-6 max-w-md text-center">
             <h2 class="text-3xl font-bold text-[#a93c96] mb-4">Stay Updated</h2>
             <p class="text-gray-600 mb-8">Sign up for our newsletter to get event updates and announcements</p>
-            <form class="w-full">
-                <div class="mb-4">
-                    <input type="email" placeholder="Your email address" class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-                <button type="submit" class="w-full bg-[#7e0a6a] hover:bg-[#600852] text-white font-bold py-3 px-6 rounded-lg transition">
-                    Subscribe
-                </button>
-            </form>
+          <form action="https://formspree.io/f/xnnvgnwe" method="POST" class="w-full">
+    <div class="mb-4">
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Your email address" 
+            required 
+            class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+    </div>
+    <button 
+        type="submit" 
+        class="w-full bg-[#7e0a6a] hover:bg-[#600852] text-white font-bold py-3 px-6 rounded-lg transition"
+    >
+        Subscribe
+    </button>
+</form>
+
         </div>
     </section>
 
